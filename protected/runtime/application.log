@@ -1,0 +1,59 @@
+2013/07/30 10:40:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '192.168.5.176' (111 "Connection refused")' in /var/www/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/yii/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /var/www/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/yii/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /var/www/yii/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /var/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/TrainingSurveys/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/TrainingSurveys/index.php/gii/model
+HTTP_REFERER=http://localhost/TrainingSurveys/index.php/gii/default/index
+---
+2013/07/30 11:07:03 [error] [exception.CException] exception 'CException' with message 'Property "Users.Username" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('Username')
+#1 /var/www/TrainingSurveys/protected/components/UserIdentity.php(24): CActiveRecord->__get('Username')
+#2 /var/www/TrainingSurveys/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#3 /var/www/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#4 /var/www/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/TrainingSurveys/protected/controllers/SiteController.php(94): CModel->validate()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#8 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#12 /var/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#13 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/TrainingSurveys/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/TrainingSurveys/index.php/site/login
+HTTP_REFERER=http://localhost/TrainingSurveys/index.php/site/login
+---
+2013/07/30 12:13:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(283): CController->run('MyAction')
+#8 /var/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('Questions/MyAct...')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/TrainingSurveys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/TrainingSurveys/index.php/Questions/MyAction
+---
